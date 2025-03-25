@@ -4,4 +4,8 @@ spring:
     
 app:
   constants:
-    
+    ws:
+      tran-data-url: https://trxapitest.credable.io/service/transactionWsdl.wsdl
+    basic-auth:
+      username: user1
+      password: P@ssword

@@ -1,5 +1,6 @@
 package com.trandata.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -14,6 +15,11 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class SecurityConfig {
+	
+	@Value("${app.constants.basic-auth.username}")
+	private String username;
+	@Value("${app.constants.basic-auth.password}")
+	private String password;
 
     @Bean
     public static PasswordEncoder passwordEncoder() {
@@ -32,9 +38,8 @@ public class SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user1 = User.builder()
-                .username("user1")
-                .password(passwordEncoder().encode("P@ssword"))
-                //.password("P@ssword")
+                .username(username)
+                .password(passwordEncoder().encode(password))
                 .roles("USER")
                 .build();
 

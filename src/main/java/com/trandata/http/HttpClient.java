@@ -14,7 +14,7 @@ import java.security.cert.X509Certificate;
  * This implementation also ignores SSL certificate validation.
  */
 public class HttpClient {
-	private static final OkHttpClient client = getUnsafeOkHttpClient();
+	private final OkHttpClient client = getUnsafeOkHttpClient();
 
 	/**
 	 * Sends a GET request to the specified URL.
@@ -41,7 +41,7 @@ public class HttpClient {
 	 * @return the response body as a string
 	 * @throws IOException if an I/O error occurs
 	 */
-	public static String sendPostRequest(String url, String payload, Format format, String authorization) throws IOException {
+	public String sendPostRequest(String url, String payload, Format format, String authorization) throws IOException {
 		System.out.println(format);
 		MediaType mediaType = MediaType.get("application/json; charset=utf-8");
 		switch(format) {

@@ -1,6 +1,6 @@
 package com.trandata.dto;
 
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
 import lombok.Data;
 
@@ -20,8 +20,8 @@ public class TranDataDto {
 	private double bouncedchequetransactionsdrAmount;
 	private double chequeDebitTransactionsAmount;
 	private int chequeDebitTransactionsNumber;
-	private LocalDateTime createdAt;
-	private LocalDateTime createdDate;
+	private Timestamp createdAt;
+	private Timestamp createdDate;
 	private double credittransactionsAmount;
 	private double debitcardpostransactionsAmount;
 	private int debitcardpostransactionsNumber;
@@ -30,7 +30,7 @@ public class TranDataDto {
 	private int incominginternationaltrncrNumber;
 	private int incominglocaltransactioncrNumber;
 	private int intrestAmount;
-	private LocalDateTime lastTransactionDate;
+	private Timestamp lastTransactionDate;
 	private String lastTransactionType;
 	private int lastTransactionValue;
 	private double maxAtmTransactions;
@@ -77,5 +77,5 @@ public class TranDataDto {
 	private double overthecounterwithdrawalsAmount;
 	private int overthecounterwithdrawalsNumber;
 	private double transactionValue;
-	private LocalDateTime updatedAt;
+	private Timestamp updatedAt;
 }
